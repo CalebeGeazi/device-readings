@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "fada30a9-5ab0-4160-a3f1-184cac86740c",
+		"name": "Device Readings API",
+		"description": "Postman Collection for storing device readings and fetching relevant data.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3613124"
+	},
+	"item": [
+		{
+			"name": "Fetch All Devices",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/devices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Device Readings",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"36d5658a-6908-479e-887e-a949ec199274\",\r\n    \"readings\": [\r\n        {\r\n            \"timestamp\": \"2021-10-29T16:08:15+01:00\",\r\n            \"count\": 2\r\n        },\r\n        {\r\n            \"timestamp\": \"2021-09-29T16:09:15+01:00\",\r\n            \"count\": 15\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/devices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Device",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"36d5658a-6908-479e-887e-a949ec199273\",\r\n    \"readings\": [\r\n        {\r\n            \"timestamp\": \"2021-09-29T16:08:15+01:00\",\r\n            \"count\": 2\r\n        },\r\n        {\r\n            \"timestamp\": \"2021-09-29T16:09:15+01:00\",\r\n            \"count\": 15\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/devices/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"devices",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sum of All Reading Counts for Device",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"36d5658a-6908-479e-887e-a949ec199273\",\r\n    \"readings\": [\r\n        {\r\n            \"timestamp\": \"2021-09-29T16:08:15+01:00\",\r\n            \"count\": 2\r\n        },\r\n        {\r\n            \"timestamp\": \"2021-09-29T16:09:15+01:00\",\r\n            \"count\": 15\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/devices/:id/sum",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"devices",
+						":id",
+						"sum"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Timestamp of Latest Reading for Device",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"36d5658a-6908-479e-887e-a949ec199273\",\r\n    \"readings\": [\r\n        {\r\n            \"timestamp\": \"2021-09-29T16:08:15+01:00\",\r\n            \"count\": 2\r\n        },\r\n        {\r\n            \"timestamp\": \"2021-09-29T16:09:15+01:00\",\r\n            \"count\": 15\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/devices/:id/latest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"devices",
+						":id",
+						"latest"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
