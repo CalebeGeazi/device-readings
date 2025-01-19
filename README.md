@@ -83,3 +83,4 @@ If given more time here's a list of improvements and optimizations I would have 
 1. Use an in-memory Redis Cache for storing the devices data. This would allow for use of distributed cache for better perfromance and scalability.
 2. Better Swagger API documentation. This project does include Swagger docs at `http://localhost:8000/swagger/`, however, better descriptions and API use needs to be added for it to be more useful.
 3. Better CI/CD Pipeline with Github Actions. I did include a basic Github Action for running tests on the `main` branch, however, there are many improvements that could be made to ensure code quality and testings. In addition to just running the tests, the pipeline could also run a linter to verify the code meets standards as well as a code-coverage check to ensure the project maintains a high test coverage threshold.
+4. Use docker for seemless installation and running of project.
